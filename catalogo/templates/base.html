@@ -7,7 +7,13 @@
 <body>
 	<div>
 		<a href="{% url 'home' %}">Home</a><br>
-		<a href="{% url 'login' %}">login</a><br>
+		{% if user.is_authenticated %}
+			<p>HOLA {{user.username}}</p>
+			<a href="{% url 'logout' %}">SALIR</a><br>
+		{% else %}
+			<a href="{% url 'login' %}">login</a><br>
+		{% endif %}
+
 		<a href="{% url 'registro' %}">Registrar</a><br>
 		<a href="{% url 'contacto' %}">Contacto</a><br>
 
