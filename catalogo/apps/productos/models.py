@@ -8,4 +8,5 @@ class Producto(models.Model):
 	descripcion = models.TextField(null = True)
 	precio = models.DecimalField(max_digits=8, decimal_places=2)
 	oferta = models.BooleanField()
+	imagen = models.ImageField(upload_to="productos",null = True,blank=True)
 

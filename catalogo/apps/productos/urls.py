@@ -6,6 +6,7 @@ from . import views
 app_name="productos"
 
 urlpatterns = [
-path('Todos/',views.Listar, name = "listar")
+	path('Todos/', views.Listar, name = "listar"),
+	path('Crear/', views.Crear.as_view(), name="crear")
 
 ]
