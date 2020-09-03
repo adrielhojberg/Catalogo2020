@@ -10,3 +10,6 @@ class Producto(models.Model):
 	oferta = models.BooleanField()
 	imagen = models.ImageField(upload_to="productos",null = True,blank=True)
 
+	def __str__(self):
+		return self.nombre
+

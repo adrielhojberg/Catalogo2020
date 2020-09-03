@@ -7,6 +7,4 @@ def Home(request):
 def Contacto(request):
 	return render(request,'contacto.html')
 
-def Registro(request):
-	return render(request,'registro.html')
 

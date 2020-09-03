@@ -12,9 +12,10 @@
 			<a href="{% url 'logout' %}">SALIR</a><br>
 		{% else %}
 			<a href="{% url 'login' %}">login</a><br>
+			<a href="{% url 'usuarios:registrar' %}">Registrar</a><br>
 		{% endif %}
 
-		<a href="{% url 'registro' %}">Registrar</a><br>
+		
 		<a href="{% url 'contacto' %}">Contacto</a><br>
 
 		<a href="{% url 'productos:listar' %}">Mostrar Productos</a><br>
