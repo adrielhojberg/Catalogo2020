@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+			<h1>FILTRAR</h1>
+			<form method="GET">
+			<select name ="filtro">
+				{% for r in rubros %}
+					<option value="{{r.id}}">{{r.nombre}}</option>
+				{% endfor %}
+			</select>
+			<button type="submit">filtrar</button>
+			</form>
+
+			{% for p in productos %}
+				<p>---------------------------------------------------------</p>
+				<p><b>NOMBRE: </b>{{p.nombre}}</p>
+				<p><b>DESCRIPCION: </b>{{p.descripcion}}</p>
+				<p><b>PRECIO: </b>{{p.precio}}</p>
+				{% if p.imagen %}
+					<img src="{{p.imagen.url}}" width="200" height="200">
+				{% else %}
+					<p>NO TENGO IMAGEN</p>
+				{% endif %}
+				<a href="{% url 'productos:modificar' p.codigo %}">MODIFICAR ESTE PRODUCTO</a>
+				<form method="POST" action="{% url 'productos:eliminar' p.codigo %}">{% csrf_token %}
+					<button type="submit">ELIMIAR ESTE PRODUCTO</button>
+				</form>
+			{% endfor %}
+
+{% endblock %}
