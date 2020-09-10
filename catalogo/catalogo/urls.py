@@ -16,5 +16,8 @@ urlpatterns = [
 
     # URLS DE APLICACIONES
     path('Productos/',include('apps.productos.urls')),
-    path('Usuarios/',include('apps.usuarios.urls'))
+    path('Usuarios/',include('apps.usuarios.urls')),
+    path('Minoristas/',include('apps.minorista.urls')),
+    #path('Mayoristas/',include('apps.mayorista.urls')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
