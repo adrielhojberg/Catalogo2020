@@ -8,11 +8,12 @@
 	<div>
 		<a href="{% url 'home' %}" style="margin-right: 10px;">Home</a>
 		{% if user.is_authenticated %}
-			<p>HOLA {{user.username}}</p>
+			<p>HOLA {{user.username}}---{{user.quesoy}}</p>
 			<a href="{% url 'logout' %}" style="margin-right: 10px;">SALIR</a>
 		{% else %}
 			<a href="{% url 'login' %}" style="margin-right: 10px;">login</a>
 			<a href="{% url 'minorista:registrar' %}" style="margin-right: 10px;">Registrar Minorista</a>
+			<a href="{% url 'mayorista:registrar' %}" style="margin-right: 10px;">Registrar Mayorista</a>
 		{% endif %}
 
 		
